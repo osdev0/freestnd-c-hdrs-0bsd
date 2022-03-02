@@ -1,5 +1,5 @@
-#ifndef __STDNORETURN_H__
-#define __STDNORETURN_H__
+#ifndef _STDNORETURN_H
+#define _STDNORETURN_H 1
 
 #define noreturn _Noreturn
 

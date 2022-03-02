@@ -1,5 +1,5 @@
-#ifndef __STDINT_H__
-#define __STDINT_H__
+#ifndef _STDINT_H
+#define _STDINT_H 1
 
 typedef __UINT8_TYPE__ uint8_t;
 typedef __UINT16_TYPE__ uint16_t;

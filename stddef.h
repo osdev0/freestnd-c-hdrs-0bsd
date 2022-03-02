@@ -1,5 +1,5 @@
-#ifndef __STDDEF_H__
-#define __STDDEF_H__
+#ifndef _STDDEF_H
+#define _STDDEF_H 1
 
 typedef __SIZE_TYPE__ size_t;
 typedef __PTRDIFF_TYPE__ ptrdiff_t;
