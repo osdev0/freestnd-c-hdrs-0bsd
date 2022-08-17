@@ -37,7 +37,7 @@ typedef __INTPTR_TYPE__ intptr_t;
 typedef __UINTMAX_TYPE__ uintmax_t;
 typedef __INTMAX_TYPE__ intmax_t;
 
-// Clang and GCC have different mechanisms for INT32_C and friends.
+/* Clang and GCC have different mechanisms for INT32_C and friends. */
 #ifdef __clang__
 #   define __LIBC_C_EXPAND_JOIN(x, suffix) x ## suffix
 #   define __LIBC_C_JOIN(x, suffix) __LIBC_C_EXPAND_JOIN(x, suffix)
