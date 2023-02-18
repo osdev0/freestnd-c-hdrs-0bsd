@@ -1,34 +1,44 @@
 #ifndef _LIMITS_H
 #define _LIMITS_H 1
 
+#ifndef __LIBC_C_JOIN
+#   define __LIBC_C_EXPAND_JOIN(x, suffix) x ## suffix
+#   define __LIBC_C_JOIN(x, suffix) __LIBC_C_EXPAND_JOIN(x, suffix)
+#endif
+
 #define CHAR_BIT __CHAR_BIT__
 
 #define SCHAR_MAX __SCHAR_MAX__
 #define SCHAR_MIN (-SCHAR_MAX - 1)
 
-#define UCHAR_MAX ((unsigned char)SCHAR_MAX * 2 + 1)
+#define UCHAR_MAX (__LIBC_C_JOIN(SCHAR_MAX, U) * 2 + 1)
 
-#define CHAR_MAX (((char)-1) > 0 ? UCHAR_MAX : SCHAR_MAX)
-#define CHAR_MIN (((char)-1) > 0 ? 0 : SCHAR_MIN)
+#ifdef __CHAR_UNSIGNED__
+#   define CHAR_MAX UCHAR_MAX
+#   define CHAR_MIN 0
+#else
+#   define CHAR_MAX SCHAR_MAX
+#   define CHAR_MIN SCHAR_MIN
+#endif
 
 #define SHRT_MAX __SHRT_MAX__
 #define SHRT_MIN (-SHRT_MAX - 1)
 
-#define USHRT_MAX ((unsigned short)SHRT_MAX * 2 + 1)
+#define USHRT_MAX (__LIBC_C_JOIN(SHRT_MAX, U) * 2 + 1)
 
 #define INT_MAX __INT_MAX__
 #define INT_MIN (-INT_MAX - 1)
 
-#define UINT_MAX ((unsigned int)INT_MAX * 2 + 1)
+#define UINT_MAX (__LIBC_C_JOIN(INT_MAX, U) * 2 + 1)
 
 #define LONG_MAX __LONG_MAX__
 #define LONG_MIN (-LONG_MAX - 1)
 
-#define ULONG_MAX ((unsigned long)LONG_MAX * 2 + 1)
+#define ULONG_MAX (__LIBC_C_JOIN(LONG_MAX, U) * 2 + 1)
 
 #define LLONG_MAX __LONG_LONG_MAX__
 #define LLONG_MIN (-LLONG_MAX - 1)
 
-#define ULLONG_MAX ((unsigned long long)LLONG_MAX * 2 + 1)
+#define ULLONG_MAX (__LIBC_C_JOIN(LLONG_MAX, U) * 2 + 1)
 
 #endif
