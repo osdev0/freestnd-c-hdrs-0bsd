@@ -1,5 +1,6 @@
+#if !defined(_FLOAT_H) || defined(__LIBC_GUARDLESS_INCLUDE)
+
 #ifndef _FLOAT_H
-#define _FLOAT_H 1
 
 #define FLT_ROUNDS 1
 
@@ -10,6 +11,10 @@
 #define LDBL_MANT_DIG __LDBL_MANT_DIG__
 
 #define DECIMAL_DIG __DECIMAL_DIG__
+
+#define FLT_DECIMAL_DIG __FLT_DECIMAL_DIG__
+#define DBL_DECIMAL_DIG __DBL_DECIMAL_DIG__
+#define LDBL_DECIMAL_DIG __LDBL_DECIMAL_DIG__
 
 #define FLT_EVAL_METHOD __FLT_EVAL_METHOD__
 
@@ -44,5 +49,11 @@
 #define FLT_MIN __FLT_MIN__
 #define DBL_MIN __DBL_MIN__
 #define LDBL_MIN __LDBL_MIN__
+
+#endif
+
+#if !defined(__LIBC_GUARDLESS_INCLUDE)
+#define _FLOAT_H 1
+#endif
 
 #endif

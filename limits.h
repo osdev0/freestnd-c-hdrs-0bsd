@@ -1,5 +1,6 @@
+#if !defined(_LIMITS_H) || defined(__LIBC_GUARDLESS_INCLUDE)
+
 #ifndef _LIMITS_H
-#define _LIMITS_H 1
 
 #ifndef __LIBC_C_JOIN
 #   define __LIBC_C_EXPAND_JOIN(x, suffix) x ## suffix
@@ -7,6 +8,8 @@
 #endif
 
 #define CHAR_BIT __CHAR_BIT__
+
+#define MB_LEN_MAX 16
 
 #define SCHAR_MAX __SCHAR_MAX__
 #define SCHAR_MIN (-SCHAR_MAX - 1)
@@ -40,5 +43,11 @@
 #define LLONG_MIN (-LLONG_MAX - 1)
 
 #define ULLONG_MAX (__LIBC_C_JOIN(LLONG_MAX, U) * 2 + 1)
+
+#endif
+
+#if !defined(__LIBC_GUARDLESS_INCLUDE)
+#define _LIMITS_H 1
+#endif
 
 #endif

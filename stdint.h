@@ -1,5 +1,4 @@
-#ifndef _STDINT_H
-#define _STDINT_H 1
+#if !defined(_STDINT_H) || defined(__LIBC_GUARDLESS_INCLUDE)
 
 typedef __UINT8_TYPE__ uint8_t;
 typedef __UINT16_TYPE__ uint16_t;
@@ -36,6 +35,8 @@ typedef __INTPTR_TYPE__ intptr_t;
 
 typedef __UINTMAX_TYPE__ uintmax_t;
 typedef __INTMAX_TYPE__ intmax_t;
+
+#ifndef _STDINT_H
 
 /* Clang and GCC have different mechanisms for INT32_C and friends. */
 #ifdef __clang__
@@ -135,5 +136,11 @@ typedef __INTMAX_TYPE__ intmax_t;
 
 #define WINT_MAX __WINT_MAX__
 #define WINT_MIN (-WINT_MAX - 1)
+
+#endif
+
+#if !defined(__LIBC_GUARDLESS_INCLUDE)
+#define _STDINT_H 1
+#endif
 
 #endif
