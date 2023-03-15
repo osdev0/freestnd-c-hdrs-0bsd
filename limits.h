@@ -1,6 +1,10 @@
 #if !defined(_LIMITS_H) || defined(__LIBC_GUARDLESS_INCLUDE)
+#if !defined(__LIBC_GUARDLESS_INCLUDE)
+#define _LIMITS_H 1
+#endif
 
-#ifndef _LIMITS_H
+#ifndef __LIMITS_H_MACROS
+#define __LIMITS_H_MACROS 1
 
 #ifndef __LIBC_C_JOIN
 #   define __LIBC_C_EXPAND_JOIN(x, suffix) x ## suffix
@@ -44,10 +48,6 @@
 
 #define ULLONG_MAX (__LIBC_C_JOIN(LLONG_MAX, U) * 2 + 1)
 
-#endif
-
-#if !defined(__LIBC_GUARDLESS_INCLUDE)
-#define _LIMITS_H 1
 #endif
 
 #endif

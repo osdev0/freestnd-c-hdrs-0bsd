@@ -1,6 +1,10 @@
 #if !defined(_FLOAT_H) || defined(__LIBC_GUARDLESS_INCLUDE)
+#if !defined(__LIBC_GUARDLESS_INCLUDE)
+#define _FLOAT_H 1
+#endif
 
-#ifndef _FLOAT_H
+#ifndef __FLOAT_H_MACROS
+#define __FLOAT_H_MACROS 1
 
 #define FLT_ROUNDS 1
 
@@ -50,10 +54,6 @@
 #define DBL_MIN __DBL_MIN__
 #define LDBL_MIN __LDBL_MIN__
 
-#endif
-
-#if !defined(__LIBC_GUARDLESS_INCLUDE)
-#define _FLOAT_H 1
 #endif
 
 #endif

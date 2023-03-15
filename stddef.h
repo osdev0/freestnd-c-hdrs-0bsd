@@ -1,4 +1,7 @@
 #if !defined(_STDDEF_H) || defined(__LIBC_GUARDLESS_INCLUDE)
+#if !defined(__LIBC_GUARDLESS_INCLUDE)
+#define _STDDEF_H 1
+#endif
 
 typedef __SIZE_TYPE__ size_t;
 typedef __PTRDIFF_TYPE__ ptrdiff_t;
@@ -13,7 +16,8 @@ typedef decltype(nullptr) nullptr_t;
 enum class byte : unsigned char {};
 #endif
 
-#ifndef _STDDEF_H
+#ifndef __STDDEF_H_MACROS
+#define __STDDEF_H_MACROS 1
 
 #ifdef NULL
 #undef NULL
@@ -27,10 +31,6 @@ enum class byte : unsigned char {};
 
 #define offsetof(s, m) __builtin_offsetof(s, m)
 
-#endif
-
-#if !defined(__LIBC_GUARDLESS_INCLUDE)
-#define _STDDEF_H 1
 #endif
 
 #endif
