@@ -1,5 +1,5 @@
-#if !defined(_FLOAT_H) || defined(__LIBC_GUARDLESS_INCLUDE)
-#if !defined(__LIBC_GUARDLESS_INCLUDE)
+#if !defined(_FLOAT_H) || defined(__LIBC_CXX_WRAP)
+#if !defined(__LIBC_CXX_WRAP)
 #define _FLOAT_H 1
 #endif
 
@@ -53,6 +53,14 @@
 #define FLT_MIN __FLT_MIN__
 #define DBL_MIN __DBL_MIN__
 #define LDBL_MIN __LDBL_MIN__
+
+#define FLT_TRUE_MIN __FLT_DENORM_MIN__
+#define DBL_TRUE_MIN __DBL_DENORM_MIN__
+#define LDBL_TRUE_MIN __LDBL_DENORM_MIN__
+
+#define FLT_HAS_SUBNORM __FLT_HAS_DENORM__
+#define DBL_HAS_SUBNORM __DBL_HAS_DENORM__
+#define LDBL_HAS_SUBNORM __LDBL_HAS_DENORM__
 
 #endif
 

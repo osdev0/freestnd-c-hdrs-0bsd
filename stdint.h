@@ -1,5 +1,5 @@
-#if !defined(_STDINT_H) || defined(__LIBC_GUARDLESS_INCLUDE)
-#if !defined(__LIBC_GUARDLESS_INCLUDE)
+#if !defined(_STDINT_H) || defined(__LIBC_CXX_WRAP)
+#if !defined(__LIBC_CXX_WRAP)
 #define _STDINT_H 1
 #endif
 
@@ -44,15 +44,17 @@ typedef __INTMAX_TYPE__ intmax_t;
 
 /* Clang and GCC have different mechanisms for INT32_C and friends. */
 #ifdef __clang__
-#   define __LIBC_C_EXPAND_JOIN(x, suffix) x ## suffix
-#   define __LIBC_C_JOIN(x, suffix) __LIBC_C_EXPAND_JOIN(x, suffix)
+#   ifndef __LIBC_C_JOIN
+#       define __LIBC_C_EXPAND_JOIN(x, suffix) x ## suffix
+#       define __LIBC_C_JOIN(x, suffix) __LIBC_C_EXPAND_JOIN(x, suffix)
+#   endif
 
-#   define INT8_C(x)  __LIBC_C_JOIN(x, __INT8_C_SUFFIX__)
+#   define INT8_C(x) __LIBC_C_JOIN(x, __INT8_C_SUFFIX__)
 #   define INT16_C(x) __LIBC_C_JOIN(x, __INT16_C_SUFFIX__)
 #   define INT32_C(x) __LIBC_C_JOIN(x, __INT32_C_SUFFIX__)
 #   define INT64_C(x) __LIBC_C_JOIN(x, __INT64_C_SUFFIX__)
 
-#   define UINT8_C(x)  __LIBC_C_JOIN(x, __UINT8_C_SUFFIX__)
+#   define UINT8_C(x) __LIBC_C_JOIN(x, __UINT8_C_SUFFIX__)
 #   define UINT16_C(x) __LIBC_C_JOIN(x, __UINT16_C_SUFFIX__)
 #   define UINT32_C(x) __LIBC_C_JOIN(x, __UINT32_C_SUFFIX__)
 #   define UINT64_C(x) __LIBC_C_JOIN(x, __UINT64_C_SUFFIX__)
@@ -60,12 +62,12 @@ typedef __INTMAX_TYPE__ intmax_t;
 #   define INTMAX_C(x) __LIBC_C_JOIN(x, __INTMAX_C_SUFFIX__)
 #   define UINTMAX_C(x) __LIBC_C_JOIN(x, __UINTMAX_C_SUFFIX__)
 #else
-#   define INT8_C(x)  __INT8_C(x)
+#   define INT8_C(x) __INT8_C(x)
 #   define INT16_C(x) __INT16_C(x)
 #   define INT32_C(x) __INT32_C(x)
 #   define INT64_C(x) __INT64_C(x)
 
-#   define UINT8_C(x)  __UINT8_C(x)
+#   define UINT8_C(x) __UINT8_C(x)
 #   define UINT16_C(x) __UINT16_C(x)
 #   define UINT32_C(x) __UINT32_C(x)
 #   define UINT64_C(x) __UINT64_C(x)

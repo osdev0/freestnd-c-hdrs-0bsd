@@ -1,5 +1,5 @@
-#if !defined(_STDARG_H) || defined(__LIBC_GUARDLESS_INCLUDE)
-#if !defined(__LIBC_GUARDLESS_INCLUDE)
+#if !defined(_STDARG_H) || defined(__LIBC_CXX_WRAP)
+#if !defined(__LIBC_CXX_WRAP)
 #define _STDARG_H 1
 #endif
 
