@@ -8,12 +8,16 @@ typedef __PTRDIFF_TYPE__ ptrdiff_t;
 
 #ifndef __cplusplus
 typedef __WCHAR_TYPE__ wchar_t;
+
+/* XXX fix to use proper __STDC_VERSION__ number later on */
+#if defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 202000L)
+typedef typeof(nullptr) nullptr_t;
+#endif
+
 #endif
 
 #ifdef __cplusplus
 typedef decltype(nullptr) nullptr_t;
-
-enum class byte : unsigned char {};
 #endif
 
 #ifndef __STDDEF_H_MACROS
@@ -30,6 +34,11 @@ enum class byte : unsigned char {};
 #endif
 
 #define offsetof(s, m) __builtin_offsetof(s, m)
+
+/* XXX fix to use proper __STDC_VERSION__ number later on */
+#if defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 202000L)
+#  define unreachable() __builtin_unreachable()
+#endif
 
 #endif
 
