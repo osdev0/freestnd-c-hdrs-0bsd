@@ -1,10 +1,10 @@
-#if !defined(_STDALIGN_H) || defined(__LIBC_CXX_WRAP)
-#if !defined(__LIBC_CXX_WRAP)
-#define _STDALIGN_H 1
+#if !defined(__FSTD_HDRS_STDALIGN_H) || defined(__FSTD_HDRS_CXX_WRAP)
+#if !defined(__FSTD_HDRS_CXX_WRAP)
+#define __FSTD_HDRS_STDALIGN_H 1
 #endif
 
-#ifndef __STDALIGN_H_MACROS
-#define __STDALIGN_H_MACROS 1
+#ifndef __FSTD_HDRS_STDALIGN_H_MACROS
+#define __FSTD_HDRS_STDALIGN_H_MACROS 1
 
 #ifndef __cplusplus
 #  define alignas _Alignas

@@ -1,6 +1,6 @@
-#if !defined(_STDINT_H) || defined(__LIBC_CXX_WRAP)
-#if !defined(__LIBC_CXX_WRAP)
-#define _STDINT_H 1
+#if !defined(__FSTD_HDRS_STDINT_H) || defined(__FSTD_HDRS_CXX_WRAP)
+#if !defined(__FSTD_HDRS_CXX_WRAP)
+#define __FSTD_HDRS_STDINT_H 1
 #endif
 
 typedef __UINT8_TYPE__ uint8_t;
@@ -39,28 +39,28 @@ typedef __INTPTR_TYPE__ intptr_t;
 typedef __UINTMAX_TYPE__ uintmax_t;
 typedef __INTMAX_TYPE__ intmax_t;
 
-#ifndef __STDINT_H_MACROS
-#define __STDINT_H_MACROS 1
+#ifndef __FSTD_HDRS_STDINT_H_MACROS
+#define __FSTD_HDRS_STDINT_H_MACROS 1
 
 /* Clang and GCC have different mechanisms for INT32_C and friends. */
 #ifdef __clang__
-#   ifndef __LIBC_C_JOIN
-#       define __LIBC_C_EXPAND_JOIN(x, suffix) x ## suffix
-#       define __LIBC_C_JOIN(x, suffix) __LIBC_C_EXPAND_JOIN(x, suffix)
+#   ifndef __FSTD_HDRS_C_JOIN
+#       define __FSTD_HDRS_C_EXPAND_JOIN(x, suffix) x ## suffix
+#       define __FSTD_HDRS_C_JOIN(x, suffix) __FSTD_HDRS_C_EXPAND_JOIN(x, suffix)
 #   endif
 
-#   define INT8_C(x) __LIBC_C_JOIN(x, __INT8_C_SUFFIX__)
-#   define INT16_C(x) __LIBC_C_JOIN(x, __INT16_C_SUFFIX__)
-#   define INT32_C(x) __LIBC_C_JOIN(x, __INT32_C_SUFFIX__)
-#   define INT64_C(x) __LIBC_C_JOIN(x, __INT64_C_SUFFIX__)
+#   define INT8_C(x) __FSTD_HDRS_C_JOIN(x, __INT8_C_SUFFIX__)
+#   define INT16_C(x) __FSTD_HDRS_C_JOIN(x, __INT16_C_SUFFIX__)
+#   define INT32_C(x) __FSTD_HDRS_C_JOIN(x, __INT32_C_SUFFIX__)
+#   define INT64_C(x) __FSTD_HDRS_C_JOIN(x, __INT64_C_SUFFIX__)
 
-#   define UINT8_C(x) __LIBC_C_JOIN(x, __UINT8_C_SUFFIX__)
-#   define UINT16_C(x) __LIBC_C_JOIN(x, __UINT16_C_SUFFIX__)
-#   define UINT32_C(x) __LIBC_C_JOIN(x, __UINT32_C_SUFFIX__)
-#   define UINT64_C(x) __LIBC_C_JOIN(x, __UINT64_C_SUFFIX__)
+#   define UINT8_C(x) __FSTD_HDRS_C_JOIN(x, __UINT8_C_SUFFIX__)
+#   define UINT16_C(x) __FSTD_HDRS_C_JOIN(x, __UINT16_C_SUFFIX__)
+#   define UINT32_C(x) __FSTD_HDRS_C_JOIN(x, __UINT32_C_SUFFIX__)
+#   define UINT64_C(x) __FSTD_HDRS_C_JOIN(x, __UINT64_C_SUFFIX__)
 
-#   define INTMAX_C(x) __LIBC_C_JOIN(x, __INTMAX_C_SUFFIX__)
-#   define UINTMAX_C(x) __LIBC_C_JOIN(x, __UINTMAX_C_SUFFIX__)
+#   define INTMAX_C(x) __FSTD_HDRS_C_JOIN(x, __INTMAX_C_SUFFIX__)
+#   define UINTMAX_C(x) __FSTD_HDRS_C_JOIN(x, __UINTMAX_C_SUFFIX__)
 #else
 #   define INT8_C(x) __INT8_C(x)
 #   define INT16_C(x) __INT16_C(x)
@@ -137,11 +137,19 @@ typedef __INTMAX_TYPE__ intmax_t;
 
 #define SIZE_MAX __SIZE_MAX__
 
-#define WCHAR_MAX __WCHAR_MAX__
-#define WCHAR_MIN (-WCHAR_MAX - 1)
+#ifndef WCHAR_MAX
+#  define WCHAR_MAX __WCHAR_MAX__
+#endif
+#ifndef WCHAR_MIN
+#  define WCHAR_MIN (-WCHAR_MAX - 1)
+#endif
 
-#define WINT_MAX __WINT_MAX__
-#define WINT_MIN (-WINT_MAX - 1)
+#ifndef WINT_MAX
+#  define WINT_MAX __WINT_MAX__
+#endif
+#ifndef WINT_MIN
+#  define WINT_MIN (-WINT_MAX - 1)
+#endif
 
 #endif
 

@@ -1,12 +1,12 @@
-#if !defined(_STDARG_H) || defined(__LIBC_CXX_WRAP)
-#if !defined(__LIBC_CXX_WRAP)
-#define _STDARG_H 1
+#if !defined(__FSTD_HDRS_STDARG_H) || defined(__FSTD_HDRS_CXX_WRAP)
+#if !defined(__FSTD_HDRS_CXX_WRAP)
+#define __FSTD_HDRS_STDARG_H 1
 #endif
 
 typedef __builtin_va_list va_list;
 
-#ifndef __STDARG_H_MACROS
-#define __STDARG_H_MACROS 1
+#ifndef __FSTD_HDRS_STDARG_H_MACROS
+#define __FSTD_HDRS_STDARG_H_MACROS 1
 
 #define va_start(v, l) __builtin_va_start(v, l)
 #define va_end(v) __builtin_va_end(v)

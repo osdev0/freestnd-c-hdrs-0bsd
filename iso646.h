@@ -1,5 +1,5 @@
-#ifndef _ISO646_H
-#define _ISO646_H 1
+#ifndef __FSTD_HDRS_ISO646_H
+#define __FSTD_HDRS_ISO646_H 1
 
 #define and &&
 #define and_eq &=

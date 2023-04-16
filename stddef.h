@@ -1,6 +1,6 @@
-#if !defined(_STDDEF_H) || defined(__LIBC_CXX_WRAP)
-#if !defined(__LIBC_CXX_WRAP)
-#define _STDDEF_H 1
+#if !defined(__FSTD_HDRS_STDDEF_H) || defined(__FSTD_HDRS_CXX_WRAP)
+#if !defined(__FSTD_HDRS_CXX_WRAP)
+#define __FSTD_HDRS_STDDEF_H 1
 #endif
 
 typedef __SIZE_TYPE__ size_t;
@@ -20,8 +20,8 @@ typedef typeof(nullptr) nullptr_t;
 typedef decltype(nullptr) nullptr_t;
 #endif
 
-#ifndef __STDDEF_H_MACROS
-#define __STDDEF_H_MACROS 1
+#ifndef __FSTD_HDRS_STDDEF_H_MACROS
+#define __FSTD_HDRS_STDDEF_H_MACROS 1
 
 #ifdef NULL
 #undef NULL

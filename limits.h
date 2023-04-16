@@ -1,14 +1,14 @@
-#if !defined(_LIMITS_H) || defined(__LIBC_CXX_WRAP)
-#if !defined(__LIBC_CXX_WRAP)
-#define _LIMITS_H 1
+#if !defined(__FSTD_HDRS_LIMITS_H) || defined(__FSTD_HDRS_CXX_WRAP)
+#if !defined(__FSTD_HDRS_CXX_WRAP)
+#define __FSTD_HDRS_LIMITS_H 1
 #endif
 
-#ifndef __LIMITS_H_MACROS
-#define __LIMITS_H_MACROS 1
+#ifndef __FSTD_HDRS_LIMITS_H_MACROS
+#define __FSTD_HDRS_LIMITS_H_MACROS 1
 
-#ifndef __LIBC_C_JOIN
-#   define __LIBC_C_EXPAND_JOIN(x, suffix) x ## suffix
-#   define __LIBC_C_JOIN(x, suffix) __LIBC_C_EXPAND_JOIN(x, suffix)
+#ifndef __FSTD_HDRS_C_JOIN
+#   define __FSTD_HDRS_C_EXPAND_JOIN(x, suffix) x ## suffix
+#   define __FSTD_HDRS_C_JOIN(x, suffix) __FSTD_HDRS_C_EXPAND_JOIN(x, suffix)
 #endif
 
 #define CHAR_BIT __CHAR_BIT__
@@ -18,7 +18,7 @@
 #define SCHAR_MAX __SCHAR_MAX__
 #define SCHAR_MIN (-SCHAR_MAX - 1)
 
-#define UCHAR_MAX (__LIBC_C_JOIN(SCHAR_MAX, U) * 2 + 1)
+#define UCHAR_MAX (__FSTD_HDRS_C_JOIN(SCHAR_MAX, U) * 2 + 1)
 
 #ifdef __CHAR_UNSIGNED__
 #   define CHAR_MAX UCHAR_MAX
@@ -31,22 +31,22 @@
 #define SHRT_MAX __SHRT_MAX__
 #define SHRT_MIN (-SHRT_MAX - 1)
 
-#define USHRT_MAX (__LIBC_C_JOIN(SHRT_MAX, U) * 2 + 1)
+#define USHRT_MAX (__FSTD_HDRS_C_JOIN(SHRT_MAX, U) * 2 + 1)
 
 #define INT_MAX __INT_MAX__
 #define INT_MIN (-INT_MAX - 1)
 
-#define UINT_MAX (__LIBC_C_JOIN(INT_MAX, U) * 2 + 1)
+#define UINT_MAX (__FSTD_HDRS_C_JOIN(INT_MAX, U) * 2 + 1)
 
 #define LONG_MAX __LONG_MAX__
 #define LONG_MIN (-LONG_MAX - 1)
 
-#define ULONG_MAX (__LIBC_C_JOIN(LONG_MAX, U) * 2 + 1)
+#define ULONG_MAX (__FSTD_HDRS_C_JOIN(LONG_MAX, U) * 2 + 1)
 
 #define LLONG_MAX __LONG_LONG_MAX__
 #define LLONG_MIN (-LLONG_MAX - 1)
 
-#define ULLONG_MAX (__LIBC_C_JOIN(LLONG_MAX, U) * 2 + 1)
+#define ULLONG_MAX (__FSTD_HDRS_C_JOIN(LLONG_MAX, U) * 2 + 1)
 
 #endif
 

@@ -1,10 +1,10 @@
-#if !defined(_FLOAT_H) || defined(__LIBC_CXX_WRAP)
-#if !defined(__LIBC_CXX_WRAP)
-#define _FLOAT_H 1
+#if !defined(__FSTD_HDRS_FLOAT_H) || defined(__FSTD_HDRS_CXX_WRAP)
+#if !defined(__FSTD_HDRS_CXX_WRAP)
+#define __FSTD_HDRS_FLOAT_H 1
 #endif
 
-#ifndef __FLOAT_H_MACROS
-#define __FLOAT_H_MACROS 1
+#ifndef __FSTD_HDRS_FLOAT_H_MACROS
+#define __FSTD_HDRS_FLOAT_H_MACROS 1
 
 #define FLT_ROUNDS 1
 
