@@ -6,47 +6,76 @@
 #ifndef __FSTD_HDRS_LIMITS_H_MACROS
 #define __FSTD_HDRS_LIMITS_H_MACROS 1
 
-#ifndef __FSTD_HDRS_C_JOIN
-#   define __FSTD_HDRS_C_EXPAND_JOIN(x, suffix) x ## suffix
-#   define __FSTD_HDRS_C_JOIN(x, suffix) __FSTD_HDRS_C_EXPAND_JOIN(x, suffix)
-#endif
-
+#undef CHAR_BIT
 #define CHAR_BIT __CHAR_BIT__
 
-#define MB_LEN_MAX 16
+#ifndef MB_LEN_MAX
+#   define MB_LEN_MAX 1
+#endif
 
+#undef SCHAR_MAX
 #define SCHAR_MAX __SCHAR_MAX__
+#undef SCHAR_MIN
 #define SCHAR_MIN (-SCHAR_MAX - 1)
 
-#define UCHAR_MAX (__FSTD_HDRS_C_JOIN(SCHAR_MAX, U) * 2 + 1)
+#undef UCHAR_MAX
+#if __SCHAR_MAX__ == __INT_MAX__
+#   define UCHAR_MAX (SCHAR_MAX * 2U + 1U)
+#else
+#   define UCHAR_MAX (SCHAR_MAX * 2 + 1)
+#endif
 
 #ifdef __CHAR_UNSIGNED__
+#   undef CHAR_MAX
 #   define CHAR_MAX UCHAR_MAX
-#   define CHAR_MIN 0
+#   undef CHAR_MIN
+#   if __SCHAR_MAX__ == __INT_MAX__
+#       define CHAR_MIN 0U
+#   else
+#       define CHAR_MIN 0
+#   endif
 #else
+#   undef CHAR_MAX
 #   define CHAR_MAX SCHAR_MAX
+#   undef CHAR_MIN
 #   define CHAR_MIN SCHAR_MIN
 #endif
 
+#undef SHRT_MAX
 #define SHRT_MAX __SHRT_MAX__
+#undef SHRT_MIN
 #define SHRT_MIN (-SHRT_MAX - 1)
 
-#define USHRT_MAX (__FSTD_HDRS_C_JOIN(SHRT_MAX, U) * 2 + 1)
+#undef USHRT_MAX
+#if __SHRT_MAX_ == __INT_MAX__
+#   define USHRT_MAX (SHRT_MAX * 2U + 1U)
+#else
+#   define USHRT_MAX (SHRT_MAX * 2 + 1)
+#endif
 
+#undef INT_MAX
 #define INT_MAX __INT_MAX__
+#undef INT_MIN
 #define INT_MIN (-INT_MAX - 1)
 
-#define UINT_MAX (__FSTD_HDRS_C_JOIN(INT_MAX, U) * 2 + 1)
+#undef UINT_MAX
+#define UINT_MAX (INT_MAX * 2U + 1U)
 
+#undef LONG_MAX
 #define LONG_MAX __LONG_MAX__
-#define LONG_MIN (-LONG_MAX - 1)
+#undef LONG_MIN
+#define LONG_MIN (-LONG_MAX - 1L)
 
-#define ULONG_MAX (__FSTD_HDRS_C_JOIN(LONG_MAX, U) * 2 + 1)
+#undef ULONG_MAX
+#define ULONG_MAX (LONG_MAX * 2UL + 1UL)
 
+#undef LLONG_MAX
 #define LLONG_MAX __LONG_LONG_MAX__
-#define LLONG_MIN (-LLONG_MAX - 1)
+#undef LLONG_MIN
+#define LLONG_MIN (-LLONG_MAX - 1LL)
 
-#define ULLONG_MAX (__FSTD_HDRS_C_JOIN(LLONG_MAX, U) * 2 + 1)
+#undef ULLONG_MAX
+#define ULLONG_MAX (LLONG_MAX * 2ULL + 1ULL)
 
 #endif
 
