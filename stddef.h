@@ -23,20 +23,19 @@ typedef decltype(nullptr) nullptr_t;
 #ifndef __FSTD_HDRS_STDDEF_H_MACROS
 #define __FSTD_HDRS_STDDEF_H_MACROS 1
 
-#ifdef NULL
 #undef NULL
-#endif
-
 #ifndef __cplusplus
 #  define NULL ((void *)0)
 #else
 #  define NULL 0
 #endif
 
+#undef offsetof
 #define offsetof(s, m) __builtin_offsetof(s, m)
 
 /* XXX fix to use proper __STDC_VERSION__ number later on */
 #if defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 202000L)
+#  undef unreachable
 #  define unreachable() __builtin_unreachable()
 #endif
 
