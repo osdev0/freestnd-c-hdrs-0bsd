@@ -3,9 +3,6 @@
 #define __FSTD_HDRS_LIMITS_H 1
 #endif
 
-#ifndef __FSTD_HDRS_LIMITS_H_MACROS
-#define __FSTD_HDRS_LIMITS_H_MACROS 1
-
 #undef CHAR_BIT
 #define CHAR_BIT __CHAR_BIT__
 
@@ -76,7 +73,5 @@
 
 #undef ULLONG_MAX
 #define ULLONG_MAX (LLONG_MAX * 2ULL + 1ULL)
-
-#endif
 
 #endif

@@ -59,9 +59,6 @@ typedef __INTPTR_TYPE__ intptr_t;
 typedef __UINTMAX_TYPE__ uintmax_t;
 typedef __INTMAX_TYPE__ intmax_t;
 
-#ifndef __FSTD_HDRS_STDINT_H_MACROS
-#define __FSTD_HDRS_STDINT_H_MACROS 1
-
 /* Clang and GCC have different mechanisms for INT32_C and friends. */
 #ifdef __clang__
 #   ifndef __FSTD_HDRS_C_JOIN
@@ -261,7 +258,5 @@ typedef __INTMAX_TYPE__ intmax_t;
 #define WINT_MAX __WINT_MAX__
 #undef WINT_MIN
 #define WINT_MIN (-WINT_MAX - 1)
-
-#endif
 
 #endif

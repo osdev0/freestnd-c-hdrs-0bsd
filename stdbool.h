@@ -3,9 +3,6 @@
 #define __FSTD_HDRS_STDBOOL_H 1
 #endif
 
-#ifndef __FSTD_HDRS_STDBOOL_H_MACROS
-#define __FSTD_HDRS_STDBOOL_H_MACROS 1
-
 #ifndef __cplusplus
 #  undef bool
 #  define bool _Bool
@@ -18,7 +15,5 @@
 
 #undef __bool_true_false_are_defined
 #define __bool_true_false_are_defined 1
-
-#endif
 
 #endif

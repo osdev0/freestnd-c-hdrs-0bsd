@@ -3,9 +3,6 @@
 #define __FSTD_HDRS_FLOAT_H 1
 #endif
 
-#ifndef __FSTD_HDRS_FLOAT_H_MACROS
-#define __FSTD_HDRS_FLOAT_H_MACROS 1
-
 #undef FLT_ROUNDS
 #define FLT_ROUNDS 1
 
@@ -101,7 +98,5 @@
 #define DBL_HAS_SUBNORM __DBL_HAS_DENORM__
 #undef LDBL_HAS_SUBNORM
 #define LDBL_HAS_SUBNORM __LDBL_HAS_DENORM__
-
-#endif
 
 #endif

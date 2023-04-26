@@ -20,9 +20,6 @@ typedef typeof(nullptr) nullptr_t;
 typedef decltype(nullptr) nullptr_t;
 #endif
 
-#ifndef __FSTD_HDRS_STDDEF_H_MACROS
-#define __FSTD_HDRS_STDDEF_H_MACROS 1
-
 #undef NULL
 #ifndef __cplusplus
 #  define NULL ((void *)0)
@@ -37,8 +34,6 @@ typedef decltype(nullptr) nullptr_t;
 #if defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 202000L)
 #  undef unreachable
 #  define unreachable() __builtin_unreachable()
-#endif
-
 #endif
 
 #endif
