@@ -12,10 +12,8 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#if !defined(__FSTD_HDRS_FLOAT_H) || defined(__FSTD_HDRS_CXX_WRAP)
-#if !defined(__FSTD_HDRS_CXX_WRAP)
+#ifndef __FSTD_HDRS_FLOAT_H
 #define __FSTD_HDRS_FLOAT_H 1
-#endif
 
 #undef FLT_ROUNDS
 #define FLT_ROUNDS 1
@@ -30,18 +28,16 @@
 #undef LDBL_MANT_DIG
 #define LDBL_MANT_DIG __LDBL_MANT_DIG__
 
+#if (defined(__cplusplus) && __cplusplus >= 201103L) \
+ || (defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L)
+
 #undef DECIMAL_DIG
 #define DECIMAL_DIG __DECIMAL_DIG__
 
-#undef FLT_DECIMAL_DIG
-#define FLT_DECIMAL_DIG __FLT_DECIMAL_DIG__
-#undef DBL_DECIMAL_DIG
-#define DBL_DECIMAL_DIG __DBL_DECIMAL_DIG__
-#undef LDBL_DECIMAL_DIG
-#define LDBL_DECIMAL_DIG __LDBL_DECIMAL_DIG__
-
 #undef FLT_EVAL_METHOD
 #define FLT_EVAL_METHOD __FLT_EVAL_METHOD__
+
+#endif
 
 #undef FLT_DIG
 #define FLT_DIG __FLT_DIG__
@@ -99,6 +95,16 @@
 #undef LDBL_MIN
 #define LDBL_MIN __LDBL_MIN__
 
+#if (defined(__cplusplus) && __cplusplus >= 201703L) \
+ || (defined(__STDC_VERSION__) && __STDC_VERSION__ >= 201112L)
+
+#undef FLT_DECIMAL_DIG
+#define FLT_DECIMAL_DIG __FLT_DECIMAL_DIG__
+#undef DBL_DECIMAL_DIG
+#define DBL_DECIMAL_DIG __DBL_DECIMAL_DIG__
+#undef LDBL_DECIMAL_DIG
+#define LDBL_DECIMAL_DIG __LDBL_DECIMAL_DIG__
+
 #undef FLT_TRUE_MIN
 #define FLT_TRUE_MIN __FLT_DENORM_MIN__
 #undef DBL_TRUE_MIN
@@ -112,5 +118,7 @@
 #define DBL_HAS_SUBNORM __DBL_HAS_DENORM__
 #undef LDBL_HAS_SUBNORM
 #define LDBL_HAS_SUBNORM __LDBL_HAS_DENORM__
+
+#endif
 
 #endif

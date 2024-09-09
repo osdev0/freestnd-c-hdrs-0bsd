@@ -12,12 +12,14 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#if !defined(__FSTD_HDRS_STDBOOL_H) || defined(__FSTD_HDRS_CXX_WRAP)
-#if !defined(__FSTD_HDRS_CXX_WRAP)
+#ifndef __FSTD_HDRS_STDBOOL_H
 #define __FSTD_HDRS_STDBOOL_H 1
-#endif
 
 #ifndef __cplusplus
+
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ > 201710L
+    /* These do not need to be defined for C23+ */
+#else
 #  undef bool
 #  define bool _Bool
 
@@ -25,6 +27,8 @@
 #  define true 1
 #  undef false
 #  define false 0
+#endif
+
 #endif
 
 #undef __bool_true_false_are_defined

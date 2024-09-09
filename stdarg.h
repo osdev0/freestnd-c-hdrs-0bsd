@@ -12,15 +12,17 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#if !defined(__FSTD_HDRS_STDARG_H) || defined(__FSTD_HDRS_CXX_WRAP)
-#if !defined(__FSTD_HDRS_CXX_WRAP)
+#ifndef __FSTD_HDRS_STDARG_H
 #define __FSTD_HDRS_STDARG_H 1
-#endif
 
 typedef __builtin_va_list va_list;
 
 #undef va_start
-#define va_start(v, l) __builtin_va_start(v, l)
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ > 201710L
+#  define va_start(v, ...) __builtin_va_start(v, 0)
+#else
+#  define va_start(v, l) __builtin_va_start(v, l)
+#endif
 #undef va_end
 #define va_end(v) __builtin_va_end(v)
 #undef va_arg

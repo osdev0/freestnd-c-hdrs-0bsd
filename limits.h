@@ -12,10 +12,8 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#if !defined(__FSTD_HDRS_LIMITS_H) || defined(__FSTD_HDRS_CXX_WRAP)
-#if !defined(__FSTD_HDRS_CXX_WRAP)
+#ifndef __FSTD_HDRS_LIMITS_H
 #define __FSTD_HDRS_LIMITS_H 1
-#endif
 
 #undef CHAR_BIT
 #define CHAR_BIT __CHAR_BIT__
@@ -80,6 +78,8 @@
 #undef ULONG_MAX
 #define ULONG_MAX (LONG_MAX * 2UL + 1UL)
 
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
+
 #undef LLONG_MAX
 #define LLONG_MAX __LONG_LONG_MAX__
 #undef LLONG_MIN
@@ -87,5 +87,7 @@
 
 #undef ULLONG_MAX
 #define ULLONG_MAX (LLONG_MAX * 2ULL + 1ULL)
+
+#endif
 
 #endif

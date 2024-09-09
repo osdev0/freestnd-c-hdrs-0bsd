@@ -12,10 +12,8 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#if !defined(__FSTD_HDRS_STDDEF_H) || defined(__FSTD_HDRS_CXX_WRAP)
-#if !defined(__FSTD_HDRS_CXX_WRAP)
+#ifndef __FSTD_HDRS_STDDEF_H
 #define __FSTD_HDRS_STDDEF_H 1
-#endif
 
 typedef __SIZE_TYPE__ size_t;
 typedef __PTRDIFF_TYPE__ ptrdiff_t;
@@ -23,8 +21,7 @@ typedef __PTRDIFF_TYPE__ ptrdiff_t;
 #ifndef __cplusplus
 typedef __WCHAR_TYPE__ wchar_t;
 
-/* XXX fix to use proper __STDC_VERSION__ number later on */
-#if defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 202000L)
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ > 201710L
 typedef typeof(nullptr) nullptr_t;
 #endif
 
@@ -44,10 +41,11 @@ typedef decltype(nullptr) nullptr_t;
 #undef offsetof
 #define offsetof(s, m) __builtin_offsetof(s, m)
 
-/* XXX fix to use proper __STDC_VERSION__ number later on */
-#if defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 202000L)
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ > 201710L
 #  undef unreachable
 #  define unreachable() __builtin_unreachable()
+
+#  define __STDC_VERSION_STDDEF_H__ 202311L
 #endif
 
 #endif

@@ -12,10 +12,8 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#if !defined(__FSTD_HDRS_STDINT_H) || defined(__FSTD_HDRS_CXX_WRAP)
-#if !defined(__FSTD_HDRS_CXX_WRAP)
+#ifndef __FSTD_HDRS_STDINT_H
 #define __FSTD_HDRS_STDINT_H 1
-#endif
 
 #ifdef __UINT8_TYPE__
 typedef __UINT8_TYPE__ uint8_t;
