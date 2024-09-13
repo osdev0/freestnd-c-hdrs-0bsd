@@ -12,8 +12,8 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#ifndef __FSTD_HDRS_STDARG_H
-#define __FSTD_HDRS_STDARG_H 1
+#ifndef __FREESTND_C_HDRS_STDARG_H
+#define __FREESTND_C_HDRS_STDARG_H 1
 
 typedef __builtin_va_list va_list;
 

@@ -12,8 +12,8 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#ifndef __FSTD_HDRS_STDDEF_H
-#define __FSTD_HDRS_STDDEF_H 1
+#ifndef __FREESTND_C_HDRS_STDDEF_H
+#define __FREESTND_C_HDRS_STDDEF_H 1
 
 typedef __SIZE_TYPE__ size_t;
 typedef __PTRDIFF_TYPE__ ptrdiff_t;

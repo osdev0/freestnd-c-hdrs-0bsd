@@ -12,8 +12,8 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#ifndef __FSTD_HDRS_STDINT_H
-#define __FSTD_HDRS_STDINT_H 1
+#ifndef __FREESTND_C_HDRS_STDINT_H
+#define __FREESTND_C_HDRS_STDINT_H 1
 
 #ifdef __UINT8_TYPE__
 typedef __UINT8_TYPE__ uint8_t;
@@ -73,33 +73,33 @@ typedef __INTMAX_TYPE__ intmax_t;
 
 /* Clang and GCC have different mechanisms for INT32_C and friends. */
 #ifdef __clang__
-#   ifndef __FSTD_HDRS_C_JOIN
-#       define __FSTD_HDRS_C_EXPAND_JOIN(x, suffix) x ## suffix
-#       define __FSTD_HDRS_C_JOIN(x, suffix) __FSTD_HDRS_C_EXPAND_JOIN(x, suffix)
+#   ifndef __FREESTND_C_HDRS_C_JOIN
+#       define __FREESTND_C_HDRS_C_EXPAND_JOIN(x, suffix) x ## suffix
+#       define __FREESTND_C_HDRS_C_JOIN(x, suffix) __FREESTND_C_HDRS_C_EXPAND_JOIN(x, suffix)
 #   endif
 
 #   undef INT8_C
-#   define INT8_C(x) __FSTD_HDRS_C_JOIN(x, __INT8_C_SUFFIX__)
+#   define INT8_C(x) __FREESTND_C_HDRS_C_JOIN(x, __INT8_C_SUFFIX__)
 #   undef INT16_C
-#   define INT16_C(x) __FSTD_HDRS_C_JOIN(x, __INT16_C_SUFFIX__)
+#   define INT16_C(x) __FREESTND_C_HDRS_C_JOIN(x, __INT16_C_SUFFIX__)
 #   undef INT32_C
-#   define INT32_C(x) __FSTD_HDRS_C_JOIN(x, __INT32_C_SUFFIX__)
+#   define INT32_C(x) __FREESTND_C_HDRS_C_JOIN(x, __INT32_C_SUFFIX__)
 #   undef INT64_C
-#   define INT64_C(x) __FSTD_HDRS_C_JOIN(x, __INT64_C_SUFFIX__)
+#   define INT64_C(x) __FREESTND_C_HDRS_C_JOIN(x, __INT64_C_SUFFIX__)
 
 #   undef UINT8_C
-#   define UINT8_C(x) __FSTD_HDRS_C_JOIN(x, __UINT8_C_SUFFIX__)
+#   define UINT8_C(x) __FREESTND_C_HDRS_C_JOIN(x, __UINT8_C_SUFFIX__)
 #   undef UINT16_C
-#   define UINT16_C(x) __FSTD_HDRS_C_JOIN(x, __UINT16_C_SUFFIX__)
+#   define UINT16_C(x) __FREESTND_C_HDRS_C_JOIN(x, __UINT16_C_SUFFIX__)
 #   undef UINT32_C
-#   define UINT32_C(x) __FSTD_HDRS_C_JOIN(x, __UINT32_C_SUFFIX__)
+#   define UINT32_C(x) __FREESTND_C_HDRS_C_JOIN(x, __UINT32_C_SUFFIX__)
 #   undef UINT64_C
-#   define UINT64_C(x) __FSTD_HDRS_C_JOIN(x, __UINT64_C_SUFFIX__)
+#   define UINT64_C(x) __FREESTND_C_HDRS_C_JOIN(x, __UINT64_C_SUFFIX__)
 
 #   undef INTMAX_C
-#   define INTMAX_C(x) __FSTD_HDRS_C_JOIN(x, __INTMAX_C_SUFFIX__)
+#   define INTMAX_C(x) __FREESTND_C_HDRS_C_JOIN(x, __INTMAX_C_SUFFIX__)
 #   undef UINTMAX_C
-#   define UINTMAX_C(x) __FSTD_HDRS_C_JOIN(x, __UINTMAX_C_SUFFIX__)
+#   define UINTMAX_C(x) __FREESTND_C_HDRS_C_JOIN(x, __UINTMAX_C_SUFFIX__)
 #else
 #   undef INT8_C
 #   define INT8_C(x) __INT8_C(x)
