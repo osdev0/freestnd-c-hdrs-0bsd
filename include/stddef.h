@@ -21,7 +21,7 @@ typedef __PTRDIFF_TYPE__ ptrdiff_t;
 #ifndef __cplusplus
 typedef __WCHAR_TYPE__ wchar_t;
 
-#if defined(__STDC_VERSION__) && __STDC_VERSION__ > 201710L
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 202311L
 typedef typeof(nullptr) nullptr_t;
 #endif
 
@@ -41,7 +41,7 @@ typedef decltype(nullptr) nullptr_t;
 #undef offsetof
 #define offsetof(s, m) __builtin_offsetof(s, m)
 
-#if defined(__STDC_VERSION__) && __STDC_VERSION__ > 201710L
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 202311L
 #  undef unreachable
 #  define unreachable() __builtin_unreachable()
 

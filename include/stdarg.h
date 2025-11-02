@@ -18,7 +18,7 @@
 typedef __builtin_va_list va_list;
 
 #undef va_start
-#if defined(__STDC_VERSION__) && __STDC_VERSION__ > 201710L
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 202311L
 #  define va_start(v, ...) __builtin_va_start(v, 0)
 #else
 #  define va_start(v, l) __builtin_va_start(v, l)

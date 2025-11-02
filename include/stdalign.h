@@ -17,7 +17,7 @@
 
 #ifndef __cplusplus
 
-#if defined(__STDC_VERSION__) && __STDC_VERSION__ > 201710L
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 202311L
     /* These do not need to be defined for C23+ */
 #else
 #  undef alignas
