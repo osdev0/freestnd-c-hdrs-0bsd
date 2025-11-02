@@ -35,7 +35,7 @@ typedef decltype(nullptr) nullptr_t;
 #ifndef __cplusplus
 #  define NULL ((void *)0)
 #else
-#  define NULL 0
+#  define NULL __null
 #endif
 
 #undef offsetof
