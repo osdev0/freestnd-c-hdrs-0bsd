@@ -90,4 +90,58 @@
 
 #endif
 
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 202311L
+
+#if defined(__clang__)
+#   undef CHAR_WIDTH
+#   define CHAR_WIDTH CHAR_BIT
+#   undef SCHAR_WIDTH
+#   define SCHAR_WIDTH CHAR_BIT
+#   undef UCHAR_WIDTH
+#   define UCHAR_WIDTH CHAR_BIT
+#else
+#   undef CHAR_WIDTH
+#   define CHAR_WIDTH __SCHAR_WIDTH__
+#   undef SCHAR_WIDTH
+#   define SCHAR_WIDTH __SCHAR_WIDTH__
+#   undef UCHAR_WIDTH
+#   define UCHAR_WIDTH __SCHAR_WIDTH__
+#endif
+#   undef SHRT_WIDTH
+#   define SHRT_WIDTH __SHRT_WIDTH__
+#   undef USHRT_WIDTH
+#   define USHRT_WIDTH __SHRT_WIDTH__
+#   undef INT_WIDTH
+#   define INT_WIDTH __INT_WIDTH__
+#   undef UINT_WIDTH
+#   define UINT_WIDTH __INT_WIDTH__
+#   undef LONG_WIDTH
+#   define LONG_WIDTH __LONG_WIDTH__
+#   undef ULONG_WIDTH
+#   define ULONG_WIDTH __LONG_WIDTH__
+#if defined(__clang__)
+#   undef LLONG_WIDTH
+#   define LLONG_WIDTH __LLONG_WIDTH__
+#   undef ULLONG_WIDTH
+#   define ULLONG_WIDTH __LLONG_WIDTH__
+#else
+#   undef LLONG_WIDTH
+#   define LLONG_WIDTH __LONG_LONG_WIDTH__
+#   undef ULLONG_WIDTH
+#   define ULLONG_WIDTH __LONG_LONG_WIDTH__
+#endif
+
+#undef BOOL_MAX
+#define BOOL_MAX 1
+#undef BOOL_WIDTH
+#define BOOL_WIDTH 1
+
+#ifdef __BITINT_MAXWIDTH__
+#   undef BITINT_MAXWIDTH
+#   define BITINT_MAXWIDTH __BITINT_MAXWIDTH__
+#endif
+
+#define __STDC_VERSION_LIMITS_H__ 202311L
+#endif
+
 #endif
