@@ -32,4 +32,8 @@ typedef __builtin_va_list va_list;
 #  define va_copy(d, s) __builtin_va_copy(d, s)
 #endif
 
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 202311L
+#  define __STDC_VERSION_STDARG_H__ 202311L
+#endif
+
 #endif
