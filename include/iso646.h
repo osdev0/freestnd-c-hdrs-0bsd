@@ -1,4 +1,6 @@
-/* Copyright (C) 2022-2025 Mintsuki and contributors.
+/* SPDX-License-Identifier: 0BSD */
+
+/* Copyright (C) 2022-2026 Mintsuki and contributors.
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted.
